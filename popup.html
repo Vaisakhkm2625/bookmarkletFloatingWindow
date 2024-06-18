@@ -1,0 +1,46 @@
+
+<!-- popup.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Extension Popup</title>
+  <style>
+    body {
+      width: 200px;
+      font-family: Arial, sans-serif;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      background-color: #008CBA;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    button:hover {
+      background-color: #005f6a;
+    }
+  </style>
+</head>
+<body>
+  <button id="showButtons">Show Floating Buttons</button>
+  <script>
+    document.getElementById('showButtons').onclick = () => {
+      chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
+        chrome.scripting.executeScript({
+          target: { tabId: tabs[0].id },
+          function: () => {
+            const container = document.getElementById('floating-button-container');
+            if (container) {
+              container.style.display = container.style.display === 'none' ? 'block' : 'none';
+            }
+          }
+        });
+      });
+    };
+  </script>
+</body>
+</html>

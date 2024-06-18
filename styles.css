@@ -1,0 +1,39 @@
+
+
+#draggableDiv {
+  position: absolute;
+  z-index: 20;
+  background-color: #f1f1f1;
+ text-align: center;
+  border: 1px solid #d3d3d3;
+}
+
+#draggableDivheader {
+  padding: 10px;
+  cursor: move;
+  z-index: 10;
+  background-color: #2196F3;
+  color: #fff;
+}
+
+.vertical-btn-group {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+}
+
+.vertical-btn-group a {
+    display: block;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: background-color 0.3s;
+}
+
+.vertical-btn-group a:hover {
+    background-color: #0056b3;
+}
+
